@@ -11,24 +11,24 @@ public class TestParameterizedLion {
     private final String sex;
     private final boolean expected;
 
-    public TestParameterizedLion(String firstNumber, boolean expected ) {
+    public TestParameterizedLion(String firstNumber, boolean expected) {
         this.sex = firstNumber;
         this.expected = expected;
     }
 
-    @Parameterized.Parameters // добавили аннотацию
+    @Parameterized.Parameters
     public static Object[][] getSumData() {
-        return new Object[][] {
-                { "Самка", false},
-                { "Самец", true},
+        return new Object[][]{
+                {"Самка", false},
+                {"Самец", true},
         };
     }
 
     @Test
     public void parameterizedGetMessageSuccess() throws Exception {
-            Feline feline = new Feline();
-            Lion lion = new Lion(sex, feline);
-            boolean actual = lion.doesHaveMane();
-            assertEquals(expected, actual);
+        Feline feline = new Feline();
+        Lion lion = new Lion(sex, feline);
+        boolean actual = lion.doesHaveMane();
+        assertEquals(expected, actual);
     }
 }
