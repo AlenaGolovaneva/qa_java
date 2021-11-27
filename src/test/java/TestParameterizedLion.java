@@ -11,8 +11,8 @@ public class TestParameterizedLion {
     private final String sex;
     private final boolean expected;
 
-    public TestParameterizedLion(String firstNumber, boolean expected) {
-        this.sex = firstNumber;
+    public TestParameterizedLion(String sex, boolean expected) {
+        this.sex = sex;
         this.expected = expected;
     }
 

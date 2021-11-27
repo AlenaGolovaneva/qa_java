@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 public class TestExceptionLion {
 
+    final String EXPECT = "Используйте допустимые значения пола животного - самей или самка";
+
     @Test
     public void exceptionLionDoesHaveMane() throws Exception {
         try {
@@ -13,7 +15,7 @@ public class TestExceptionLion {
             Lion lion = new Lion("Exception", feline);
             lion.doesHaveMane();
         } catch (Exception exception) {
-            assertTrue(exception.getMessage().equals("Используйте допустимые значения пола животного - самей или самка"));
+            assertTrue(exception.getMessage().equals(EXPECT));
         }
     }
 }
