@@ -25,7 +25,7 @@ public class TestParameterizedLion {
     }
 
     @Test
-    public void parameterizedGetMessageSuccess() throws Exception {
+    public void doesHaveManeSexTrueFalse() throws Exception {
         Feline feline = new Feline();
         Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();

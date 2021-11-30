@@ -10,29 +10,28 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-
 @RunWith(MockitoJUnitRunner.class)
-public class TestSuccessesCat {
+public class TestCat {
 
-    final List<String> EXPECT_FOR_GET_FOOD = List.of("Животные", "Птицы", "Рыба");
-    final String EXPECT_FOR_GET_SOUND = "Мяу";
+    final List<String> EXPECT_LIST_OF_FOOD = List.of("Животные", "Птицы", "Рыба");
+    final String EXPECT_SOUND_MEOW = "Мяу";
 
     @Mock
     Feline feline;
 
     @Test
-    public void getSoundSuccesses(){
+    public void getSoundMeow(){
         Cat cat = new Cat(feline);
         String actual = cat.getSound();
-        assertEquals(EXPECT_FOR_GET_SOUND, actual);
+        assertEquals(EXPECT_SOUND_MEOW, actual);
     }
 
     @Test
-    public void getFoodSuccesses() throws Exception {
+    public void getFoodListOfFood() throws Exception {
         Cat cat = new Cat(feline);
-        Mockito.when(feline.eatMeat()).thenReturn(EXPECT_FOR_GET_FOOD);
+        Mockito.when(feline.eatMeat()).thenReturn(EXPECT_LIST_OF_FOOD);
         List<String> actual = cat.getFood();
-        assertEquals(EXPECT_FOR_GET_FOOD, actual);
+        assertEquals(EXPECT_LIST_OF_FOOD, actual);
     }
 
 }

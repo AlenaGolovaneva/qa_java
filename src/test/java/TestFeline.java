@@ -1,44 +1,41 @@
 import com.example.Feline;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 public class TestFeline {
 
-    final List<String> EXPECT_FOR_EAT_MEAT = List.of("Животные", "Птицы", "Рыба");
-    final int EXPECT_FOR_GET_KITTTENS_WITH_ARGUMENT = 2;
-    final int EXPECT_FOR_GET_KITTTENS_WITH_OUT_ARGUMENT = 1;
-    final String EXPECT_FOR_GET_FAMILY = "Кошачьи";
+    final List<String> EXPECT_LIST_OF_FOOD = List.of("Животные", "Птицы", "Рыба");
+    final int EXPECT_KITTENS_TWO = 2;
+    final int EXPECT_KITTENS_ONE = 1;
+    final String EXPECT_FAMILY_FELINE = "Кошачьи";
 
     @Test
-    public void getFamilySuccesses(){
+    public void getFamilyFeline(){
         Feline feline = new Feline();
         String actual = feline.getFamily();
-        assertEquals(EXPECT_FOR_GET_FAMILY, actual);
+        assertEquals(EXPECT_FAMILY_FELINE, actual);
     }
 
     @Test
-    public void getKittensWithOutArgumentSuccesses(){
+    public void getKittensOne(){
         Feline feline = new Feline();
         int actual = feline.getKittens();
-        assertEquals(EXPECT_FOR_GET_KITTTENS_WITH_OUT_ARGUMENT, actual);
+        assertEquals(EXPECT_KITTENS_ONE, actual);
     }
 
     @Test
-    public void getKittensWithArgumentSuccesses(){
+    public void getKittensTwoCountTwoCount(){
         Feline feline = new Feline();
-        int actual = feline.getKittens(EXPECT_FOR_GET_KITTTENS_WITH_ARGUMENT);
-        assertEquals(EXPECT_FOR_GET_KITTTENS_WITH_ARGUMENT, actual);
+        int actual = feline.getKittens(EXPECT_KITTENS_TWO);
+        assertEquals(EXPECT_KITTENS_TWO, actual);
     }
 
     @Test
-    public void eatMeatSuccesses() throws Exception {
+    public void eatMeatListOfFood() throws Exception {
         Feline feline = new Feline();
         List<String> actual = feline.eatMeat();
-        assertEquals(EXPECT_FOR_EAT_MEAT, actual);
+        assertEquals(EXPECT_LIST_OF_FOOD, actual);
     }
 }

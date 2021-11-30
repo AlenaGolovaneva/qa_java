@@ -9,7 +9,7 @@ public class TestExceptionLion {
     final String EXPECT = "Используйте допустимые значения пола животного - самей или самка";
 
     @Test
-    public void exceptionLionDoesHaveMane() throws Exception {
+    public void doesHaveManeException() throws Exception {
         try {
             Feline feline = new Feline();
             Lion lion = new Lion("Exception", feline);
